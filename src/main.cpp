@@ -1,20 +1,32 @@
-//--- #include
-#include <string>
-#include <cstdio>
+//--- Includes
+#include <iostream>
+#include "Player.h"
 
-//--- #define
+//--- Defines
 #define RED "\033[31m"
 #define GREEN "\033[32m"
 #define YELLOW "\033[33m"
 #define BLUE "\033[34m"
 #define RETURN "\033[0m"
 
-//--- int main() {...}
+//--- Utilities
+void clear() { std::cout << "\033[2J\033[1;1H"; }
+
+//--- Main
 int main() {
-  printf("\r%sTEXTUAL%s\n", RED, RETURN);
-  printf("\r%sTEXTUAL%s\n", YELLOW, RETURN);
-  printf("\r%sTEXTUAL%s\n", GREEN, RETURN);
-  printf("\r%sTEXTUAL%s\n", BLUE, RETURN);
+  std::string name;
+  int rating;
+
+  std::cout << "Name: ";
+  std::cin >> name;
+  std::cout << "Rating (1-5): ";
+  std::cin >> rating;
+  Player player(name, rating);
+
+  for (int i = 0; i < rating; i++) {
+    std::cout << RED << "*";
+  }
+  std::cout << RETURN << BLUE << " " << player.getName() << RETURN << std::endl;
 
   return 0;
 }
