@@ -8,7 +8,10 @@ all: $(TARGET)
 $(TARGET): $(SRCS)
 	$(CXX) $(CXXFLAGS) $(SRCS) -o $(TARGET)
 
+run: $(TARGET)
+	./$(TARGET)
+
 clean:
 	rm -f $(TARGET)
 
-.PHONY: all clean
+.PHONY: all run clean

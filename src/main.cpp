@@ -1,32 +1,27 @@
 //--- Includes
 #include <iostream>
-#include "Player.h"
-
-//--- Defines
-#define RED "\033[31m"
-#define GREEN "\033[32m"
-#define YELLOW "\033[33m"
-#define BLUE "\033[34m"
-#define RETURN "\033[0m"
+#include <string>
+#include "player.hpp"
+#include "colors.hpp"
 
 //--- Utilities
 void clear() { std::cout << "\033[2J\033[1;1H"; }
+void error(std::string e) {
+  std::cout << RED << e << RESET << std::endl;
+  std::exit(1);
+}
 
 //--- Main
 int main() {
-  std::string name;
-  int rating;
+  // Character Creation
+  clear();
+  Player* player = new Player();
+  if (player == nullptr) error("<MEMORY ALLOCATION FAILED>");
 
-  std::cout << "Name: ";
-  std::cin >> name;
-  std::cout << "Rating (1-5): ";
-  std::cin >> rating;
-  Player player(name, rating);
+  // Display Character
+  clear();
+  std::cout << player->bio() << std::endl;
 
-  for (int i = 0; i < rating; i++) {
-    std::cout << RED << "*";
-  }
-  std::cout << RETURN << BLUE << " " << player.getName() << RETURN << std::endl;
-
+  delete player;
   return 0;
 }
