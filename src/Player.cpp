@@ -22,6 +22,8 @@ Player::Player() {
         this->stars += "☆";
       }
     }
+
+    // Color rating
     this->stars += RESET;
     switch (this->rating) {
         case 1:

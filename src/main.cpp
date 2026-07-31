@@ -16,7 +16,7 @@ int main() {
   // Character Creation
   clear();
   Player* player = new Player();
-  if (player == nullptr) error("<MEMORY ALLOCATION FAILED>");
+  if (player == nullptr) error("player == nullptr");
 
   // Display Character
   clear();
