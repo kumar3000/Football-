@@ -3,6 +3,7 @@
 #include <string>
 #include "player.hpp"
 #include "colors.hpp"
+#include "college.hpp"
 
 //--- Utilities
 void clear() { std::cout << "\033[2J\033[1;1H"; }
@@ -21,7 +22,10 @@ int main() {
   // Display Character
   clear();
   std::cout << player->bio() << std::endl;
+  College* college = new College(player);
+  if (college == nullptr) error("college == nullptr");
 
+  delete college;
   delete player;
   return 0;
 }

@@ -44,9 +44,14 @@ Player::Player() {
     }
 }
 
-std::string Player::getName() { return this->name; }
+std::string Player::getName() const { return this->name; }
+void Player::setName(std::string new_name) { this->name = new_name; }
 
-std::string Player::getStars() { return this->stars; }
+std::string Player::getStars() const { return this->stars; }
+void Player::setStars(std::string new_stars) { this->stars = new_stars; }
+
+std::string Player::getCollege() const { return this->college; }
+void Player::setCollege(std::string new_college) { this->college = new_college; }
 
 std::string Player::bio() {
     std::string bio = WHITE + this->name;
@@ -55,6 +60,8 @@ std::string Player::bio() {
     return bio;
 }
 
-int Player::getRating() { return this->rating; }
+int Player::getRating() const { return this->rating; }
+void Player::setRating(int new_rating) { this->rating = new_rating; }
 
-int Player::getAge() { return this->age; }
+int Player::getAge() const { return this->age; }
+void Player::setAge(int new_age) { this->age = new_age; }
