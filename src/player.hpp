@@ -10,6 +10,7 @@ class Player {
     std::string college;
     int rating;
     int age = 18;
+    int experience = 0;
 
   public:
     Player();
@@ -24,6 +25,8 @@ class Player {
     void setRating(int);
     int getAge() const;
     void setAge(int);
+    int getExp() const;
+    void setExp(int);
 };
 
 #endif

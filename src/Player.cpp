@@ -8,10 +8,11 @@ Player::Player() {
 
     std::cout << "Name: ";
     std::getline(std::cin, this->name);
-    
+    std::string rating_str;
     do {
       std::cout << "Rating (1-5): ";
-      std::cin >> this->rating;
+      std::getline(std::cin, rating_str);
+      this->rating = std::stoi(rating_str);
     } while (this->rating < 1 || this->rating > 5);
 
     // Construct Stars String
@@ -65,3 +66,6 @@ void Player::setRating(int new_rating) { this->rating = new_rating; }
 
 int Player::getAge() const { return this->age; }
 void Player::setAge(int new_age) { this->age = new_age; }
+
+int Player::getExp() const { return this->experience; }
+void Player::setExp(int new_exp) { this->experience = new_exp; }

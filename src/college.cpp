@@ -16,3 +16,9 @@ College::College(Player* set_player) {
     this->mascot = mascots[mascot_idx];
     std::cout << WHITE << this->player->getCollege() << " " << this->mascot << RESET << std::endl;
 }
+
+void College::sim_season() {
+    for (int i = 0; i < this->season_length; i++) {
+        printf("*** WEEK %02d ***\n", i + 1);
+    }
+}

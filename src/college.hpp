@@ -15,9 +15,11 @@ private:
         "Owls", "Lions", "Tigers", "Pirates", "Pioneers", "Gators", "Minutemen"
     };
     std::string mascot;
+    int season_length = 12;
 
 public:
     College(Player*);
+    void sim_season();
 };
 
 #endif
