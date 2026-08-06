@@ -1,12 +1,12 @@
 //--- Includes
+#include "college.hpp"
+#include "colors.hpp"
+#include "player.hpp"
 #include <iostream>
 #include <string>
-#include "player.hpp"
-#include "colors.hpp"
-#include "college.hpp"
 
 //--- Globals
-std::string loop = "Y";
+char loop = 'Y';
 
 //--- Utilities
 void clear() { std::cout << "\033[2J\033[1;1H"; }
@@ -19,24 +19,26 @@ void error(std::string e) {
 int main() {
   // Character Creation
   clear();
-  Player* player = new Player();
-  if (player == nullptr) error("player == nullptr");
+  Player *player = new Player();
+  if (player == nullptr)
+    error("player == nullptr");
 
   // Display Character
   clear();
   std::cout << player->bio() << "\n";
 
   // College Simulation
-  College* college = new College(player);
-  if (college == nullptr) error("college == nullptr");
-  while (player->getAge() != 22 && loop != "n") {
+  College *college = new College(player);
+  if (college == nullptr)
+    error("college == nullptr");
+  while (player->getAge() != 22 && loop != 'n') {
     clear();
     player->setExp(player->getExp() + 1);
-    std::cout<< "Year " << player->getExp() << "\n";
+    std::cout << "Year " << player->getExp() << "\n";
     college->sim_season();
     player->setAge(player->getAge() + 1);
-    std::cout << "Continue <Y/n>? ";
-    std::getline(std::cin, loop);
+    std::cout << "Next Season <Y/n>? ";
+    std::cin.get(loop);
   }
 
   delete college;
