@@ -2,6 +2,7 @@
 #include "college.hpp"
 #include "colors.hpp"
 #include "player.hpp"
+#include "pro_league.hpp"
 #include <iostream>
 #include <string>
 
@@ -40,6 +41,8 @@ int main() {
     std::cout << "Next Season <Y/n>? ";
     std::cin.get(loop);
   }
+
+  Pro_League nfl = new Pro_League(player);
 
   delete college;
   delete player;
