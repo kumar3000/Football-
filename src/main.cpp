@@ -35,14 +35,25 @@ int main() {
   while (player->getAge() != 22 && loop != 'n') {
     clear();
     player->setExp(player->getExp() + 1);
-    std::cout << "Year " << player->getExp() << "\n";
+    std::cout << "YEAR " << player->getExp() << "\n";
     college->sim_season();
     player->setAge(player->getAge() + 1);
     std::cout << "Next Season <Y/n>? ";
     std::cin.get(loop);
   }
 
-  Pro_League nfl = new Pro_League(player);
+  Pro_League *nfl = new Pro_League(player);
+  if (nfl == nullptr)
+    error("pro_leage == nullptr");
+  while (player->getAge() != 41 && loop != 'n') {
+    clear();
+    player->setExp(player->getExp() + 1);
+    std::cout << "YEAR " << player->getExp() << "\n";
+    nfl->sim_season();
+    player->setAge(player->getAge() + 1);
+    std::cout << "Next Season <Y/n>? ";
+    std::cin.get(loop);
+  }
 
   delete college;
   delete player;

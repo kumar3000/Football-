@@ -14,7 +14,7 @@ private:
   std::vector<std::string> mascots = {
       "Owls", "Lions", "Tigers", "Pirates", "Pioneers", "Gators", "Minutemen"};
   std::string mascot;
-  int season_length = 12;
+  int season_length = 17;
 
 public:
   Pro_League(Player *);
