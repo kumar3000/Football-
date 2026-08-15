@@ -39,7 +39,7 @@ int main() {
     college->sim_season();
     player->setAge(player->getAge() + 1);
     std::cout << "Next Season <Y/n>? ";
-    std::cin.get(loop);
+    std::cin >> loop;
   }
 
   Pro_League *nfl = new Pro_League(player);
@@ -52,10 +52,13 @@ int main() {
     nfl->sim_season();
     player->setAge(player->getAge() + 1);
     std::cout << "Next Season <Y/n>? ";
-    std::cin.get(loop);
+    std::cin >> loop;
   }
 
+  // Delete heap allocated objects
   delete college;
+  delete nfl;
   delete player;
+
   return 0;
 }

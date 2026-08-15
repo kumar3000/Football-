@@ -9,7 +9,7 @@ void Pro_League::sim_season() {
   for (int i = 0; i < this->season_length; i++) {
     printf("\n*** WEEK %02d ***\n", i + 1);
     std::cout << "Next Week <Y/n>? ";
-    std::cin.get(loop);
+    std::cin >> loop;
     if (loop == 'n') {
       break;
     }

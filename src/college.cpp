@@ -8,8 +8,8 @@ College::College(Player *set_player) {
   this->player = set_player;
 
   std::srand(static_cast<unsigned int>(std::time(nullptr)));
-  int team_idx = rand() % 8;
-  int mascot_idx = rand() % 8;
+  int team_idx = rand() % collegeCities.size();
+  int mascot_idx = rand() % mascots.size();
 
   std::cout << WHITE << "*** SIGNING DAY ***" << RESET << std::endl;
   this->player->setCollege(collegeCities[team_idx]);
@@ -23,7 +23,7 @@ void College::sim_season() {
   for (int i = 0; i < this->season_length; i++) {
     printf("\n*** WEEK %02d ***\n", i + 1);
     std::cout << "Next Week <Y/n>? ";
-    std::cin.get(loop);
+    std::cin >> loop;
     if (loop == 'n') {
       break;
     }
