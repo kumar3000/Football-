@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++17 -O2
+CXXFLAGS = -Wall -Wextra -Werror -std=c++23 -O2
 
 TARGET = ./bin/main
 SRCS = $(wildcard ./src/*.cpp)
